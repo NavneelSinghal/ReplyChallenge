@@ -41,8 +41,10 @@ void solve() {
     ll unguarded_size_x = sqrt(w);
     ll unguarded_size_y = sqrt(h);
 
-    ll x_size = min(max(1LL, unguarded_size_x), w);
-    ll y_size = min(max(1LL, unguarded_size_y), h);
+    ll x_size = clamp(unguarded_size_x, 1LL, w);
+    ll y_size = clamp(unguarded_size_y, 1LL, h);
+    // ll x_size = min(max(1LL, unguarded_size_x), w);
+    // ll y_size = min(max(1LL, unguarded_size_y), h);
 
     ll x_chunks = (w + x_size - 1) / x_size;
     ll y_chunks = (h + y_size - 1) / y_size;
